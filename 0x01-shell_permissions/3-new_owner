@@ -1,2 +1,1 @@
-#!/bin/bash
-chown betty Hello
+chmod betty Hello
