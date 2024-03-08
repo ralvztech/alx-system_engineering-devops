@@ -10,14 +10,14 @@ defaults
 	timeout client  30s
 	timeout server  30s
 
-frontend irsprojectworks-com-frontend
+frontend ralvz-tech-frontend
 	bind *:80
-	bind *:443 ssl crt /etc/haproxy/certs/irsprojectworks.com.pem
+	bind *:443 ssl crt /etc/haproxy/certs/ralvz.tech.pem
 	http-request redirect scheme https code 301 unless { ssl_fc }
 	http-request set-header X-Forwarded-Proto https
-	default_backend irsprojectworks-com-backend
+	default_backend ralvz-tech-backend
 
-backend irsprojectworks-com-backend
+backend ralvz-tech-backend
 	balance roundrobin
 	server 273461-web-01 100.26.160.163:80 check
 	server 273461-web-02 100.26.136.104:80 check
